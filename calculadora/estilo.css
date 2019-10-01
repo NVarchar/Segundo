@@ -1,0 +1,83 @@
+@charset "utf-8";
+.card img {
+	width: 100%;
+	height: auto;
+	border-top-right-radius: 5%;
+	border-top-left-radius: 5%;
+}
+.card {
+	width: 100%;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border-radius: 5%;
+	margin:0;
+	margin-bottom: 1rem;
+	background-color: blue;
+	
+}
+.card p {
+	font-size: 0.8em;
+	padding: 1rem;
+	padding-top: 0.3rem;
+	padding-bottom: 1rem;
+	margin: 0;
+}
+.card p a {
+	color: white;
+}
+.card h2 {
+	color: red;
+	font-size: 1em;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 0;
+	margin: 0;
+}
+.ej1 .col-xs-4, .ej1 .col-sm-3, .ej1 .col-md-2, .ej1 .col-lg-1 {
+	padding:0.1em;
+}
+.cab {
+	background: linear-gradient(to bottom, #149ecc 0%,#0c7cbc 100%);	
+	margin-bottom:1em;
+}
+header {
+	margin:1em;
+	padding:0;
+	width: 100%;
+}
+header h1 {
+	color:white;
+	margin:0;
+	margin-top:1em;
+	padding:0;
+	width: 100%;
+}
+.ej2 .col-xs-12, .ej2 .col-md-4 {
+	padding:0.2em;
+}
+.ej2 img {
+	width: 100%;
+	height: auto;
+}
+.bode {
+	width: 100%;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border-bottom-right-radius: 5%;
+	border-bottom-left-radius: 5%;
+	margin: 0;
+	margin-bottom: 1rem;
+	background-color: grey;
+	
+}
+.bode p {
+	color: black;
+	font-size: 0.8em;
+	padding: 1rem;
+	padding-top: 0.3rem;
+	padding-bottom: 1rem;
+	margin: 0;
+}
+button{
+	height: 185px;
+	width: 100px;
+}
