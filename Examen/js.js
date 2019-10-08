@@ -1,3 +1,4 @@
+var p1, p2, p3, p4, nota;
 $('document').ready(function(){
 	$('input[type="text"], input[type="email"], textarea').focus(function(){
 		var background = $(this).attr('id');
@@ -27,5 +28,9 @@ if($('#email').val() == "") {
 }
   if(stopsubmit) return false;
 });
-		
+	if (document.getElementById('pre1').checked==true) {p1=1}
+else {p1=0}	
+	nota=p1+p2+p3+p4;
+alert(" Aciertos: " + nota);
+location.reload();
 });
