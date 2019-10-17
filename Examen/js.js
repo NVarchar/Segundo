@@ -1,4 +1,3 @@
-var p1, p2, p3, p4, nota;
 $('document').ready(function(){
 	$('input[type="text"], input[type="email"], textarea').focus(function(){
 		var background = $(this).attr('id');

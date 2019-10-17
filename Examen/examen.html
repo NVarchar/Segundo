@@ -2,75 +2,261 @@
 <html>
 <head>
 	<title></title>
-</head>
+<script type="text/javascript">
+    //setInterval
+    var cronometro;
+    function detenerse()
+    {
+        clearInterval(cronometro);
+    }
+    function carga()
+    {
+        contador_s =0;
+        contador_m =0;
+        s = document.getElementById("segundos");
+        m = document.getElementById("minutos");
+        cronometro = setInterval(
+            function(){
+                if(contador_s==60)
+                {
+                    contador_s=0;
+                    contador_m++;
+                    m.innerHTML = contador_m;
+                    if(contador_m==60)
+                    {
+                        contador_m=0;
+                    }
+                }
+                s.innerHTML = contador_s;
+                contador_s++;
+            }
+            ,1000);
+    }
+
+    </script>
+
+	<script type="text/javascript">
+		var cal =0;
+		function calcular(){
+		respuesta1= document.getElementsById('r1');
+		if (respuesta1.value === "1789") {
+			document.getElementById("mensaje1").innerHTML = "Correcto";
+			cal++
+		}
+		else{
+			document.getElementById("mensaje1").innerHTML = "Incorrecto";
+			}
+		document.getElementById("calificacion_final").innerHTML = cal;
+		}
+		function calcular(){
+		respuesta1= document.getElementsById('r2');
+		if (respuesta1.value === "1914") {
+			document.getElementById("mensaje1").innerHTML = "Correcto";
+			cal++
+		}
+		else{
+			document.getElementById("mensaje1").innerHTML = "Incorrecto";
+			}
+		document.getElementById("calificacion_final").innerHTML = cal;
+		}
+		function calcular(){
+		respuesta1= document.getElementsById('r3');
+		if (respuesta1.value === "1760") {
+			document.getElementById("mensaje1").innerHTML = "Correcto";
+			cal++
+		}
+		else{
+			document.getElementById("mensaje1").innerHTML = "Incorrecto";
+			}
+		document.getElementById("calificacion_final").innerHTML = cal;
+		}
+		function calcular(){
+		respuesta1= document.getElementsById('r4');
+		if (respuesta1.value === "Zeus") {
+			document.getElementById("mensaje1").innerHTML = "Correcto";
+			cal++
+		}
+		else{
+			document.getElementById("mensaje1").innerHTML = "Incorrecto";
+			}
+		document.getElementById("calificacion_final").innerHTML = cal;
+		}
+		function calcular(){
+		respuesta1= document.getElementsById('r5');
+		if (respuesta1.value === "1945") {
+			document.getElementById("mensaje1").innerHTML = "Correcto";
+			cal++
+		}
+		else{
+			document.getElementById("mensaje1").innerHTML = "Incorrecto";
+			}
+		document.getElementById("calificacion_final").innerHTML = cal;
+		}
+		function calcular(){
+		respuesta1= document.getElementsById('r6');
+		if (respuesta1.value === "27 a.c.") {
+			document.getElementById("mensaje1").innerHTML = "Correcto";
+			cal++
+		}
+		else{
+			document.getElementById("mensaje1").innerHTML = "Incorrecto";
+			}
+		document.getElementById("calificacion_final").innerHTML = cal;
+		}
+		function calcular(){
+		respuesta1= document.getElementsById('r7');
+		if (respuesta1.value === "476") {
+			document.getElementById("mensaje1").innerHTML = "Correcto";
+			cal++
+		}
+		else{
+			document.getElementById("mensaje1").innerHTML = "Incorrecto";
+			}
+		document.getElementById("calificacion_final").innerHTML = cal;
+		}
+		function calcular(){
+		respuesta1= document.getElementsById('r8');
+		if (respuesta1.value === "1810") {
+			document.getElementById("mensaje1").innerHTML = "Correcto";
+			cal++
+		}
+		else{
+			document.getElementById("mensaje1").innerHTML = "Incorrecto";
+			}
+		document.getElementById("calificacion_final").innerHTML = cal;
+		}
+		function calcular(){
+		respuesta1= document.getElementsById('r9');
+		if (respuesta1.value === "Neville Chamberlain") {
+			document.getElementById("mensaje1").innerHTML = "Correcto";
+			cal++
+		}
+		else{
+			document.getElementById("mensaje1").innerHTML = "Incorrecto";
+			}
+		document.getElementById("calificacion_final").innerHTML = cal;
+		}
+		function calcular(){
+		respuesta1= document.getElementsById('r10');
+		if (respuesta1.value === "1941") {
+			document.getElementById("mensaje1").innerHTML = "Correcto";
+			cal++
+		}
+		else{
+			document.getElementById("mensaje1").innerHTML = "Incorrecto";
+			}
+		document.getElementById("calificacion_final").innerHTML = cal;
+		}
+	</script>
+</head><body onload="carga()">
+    <p>
+        <span id="minutos">0</span>:<span id="segundos">0</span>
+    </p>
+    <!-- <input type="button" onclick="Calcula()" value="deternse" /> -->
+</body>
 <body>
 <header>
 	<h1>Examen Historia</h1>
 </header>
 <LINK REL=StyleSheet HREF="estilo.css" TYPE="text/css" MEDIA=screen>
-<script type="text/javascript" src="/js/codigo.js"></script>
+
 <div id="form">
 
 <div class="fish" id="fish"></div>
 <div class="fish" id="fish2"></div>
 
 <form id="waterform" method="post">
-<div class="formgroup" id="pre1">
-    <label for="name">1. Menciona el año de inicio de la revolución Francesa</label>
-    <input type="text" id="name" name="name" />
-</div>
+	<div class="form-group">
+	<label form="name">1. Menciona el año de inicio de la revolución Francesa</label> 
+	<input type="text" class="form-control" id="r1" name="r1" placeholder="Menciona el año de inicio de la revolución Francesa" required>
+	</div>
+		<div id="mensaje1"></div>
+		<br>
+<!-- 	Calificación: <span id="calificacion_final"></span>
+	<button onclick="calcular()" >Evaluar</button> -->
+	
 
-<div class="formgroup" id="pre2">
-    <label for="email">2. Inicio de la Primera guerra mundial</label>
-    <input type="email" id="email" name="email" />
-</div>
+	<div class="form-group">
+	<label form="nombre_del_proveedor">2. Inicio de la Primera guerra mundial</label> 
+	<input type="text" class="form-control" id="r2" name="r2" placeholder="Inicio de la Primera guerra mundial" required>
+	</div>
+		<div id="mensaje1"></div>
+		<br>
+<!-- 	Calificación: <span id="calificacion_final"></span>
+	<button onclick="calcular()" >Evaluar</button> -->
 
-<div class="formgroup" id="pre3">
-    <label for="email">3. Año que comenzo la revolución Industrial</label>
-    <input type="email" id="email" name="email" />
-</div>
+	<div class="form-group">
+	<label form="nombre_del_proveedor">3. Año que comenzo la revolución Industrial</label> 
+	<input type="text" class="form-control" id="r3" name="r3" placeholder="Año que comenzo la revolución Industrial" required>
+	</div>
+		<div id="mensaje1"></div>
+		<br>
+<!-- 	Calificación: <span id="calificacion_final"></span>
+	<button onclick="calcular()" >Evaluar</button> -->
+	
+	<div class="form-group">
+	<label form="nombre_del_proveedor">4. Menciona un Dios del cielo Griego</label> 
+	<input type="text" class="form-control" id="r4" name="r4" placeholder="Menciona un Dios del cielo Griego" required>
+	</div>
+		<div id="mensaje1"></div>
+		<br>
+<!-- 	Calificación: <span id="calificacion_final"></span>
+	<button onclick="calcular()" >Evaluar</button> -->
 
-<div class="formgroup" id="pre4">
-    <label for="email">4. Menciona un Dios del cielo Griego</label>
-    <input type="email" id="email" name="email" />
-</div>
+	<div class="form-group">
+	<label form="nombre_del_proveedor">5. Año que termino la segunda guerra mundial</label> 
+	<input type="text" class="form-control" id="r5" name="r5" placeholder="Año que termino la segunda guerra mundial" required>
+	</div>
+		<div id="mensaje1"></div>
+		<br>
+<!-- 	Calificación: <span id="calificacion_final"></span>
+	<button onclick="calcular()" >Evaluar</button> -->
 
-<div class="formgroup" id="pre5">
-    <label for="email">5. Año que termino la segunda guerra mundial</label>
-    <input type="email" id="email" name="email" />
-</div>
+	<div class="form-group">
+	<label form="nombre_del_proveedor">6. año de inicio del imperio romano</label> 
+	<input type="text" class="form-control" id="r6" name="r6" placeholder="año de inicio del imperio romano" required>
+	</div>
+		<div id="mensaje1"></div>
+		<br>
+<!-- 	Calificación: <span id="calificacion_final"></span>
+	<button onclick="calcular()" >Evaluar</button> -->
 
-<div class="formgroup" id="pre6">
-    <label for="email">6. año de inicio del imperio romano</label>
-    <input type="email" id="email" name="email" />
-</div>
+	<div class="form-group">
+	<label form="nombre_del_proveedor">7. año de la caida del imperio romano</label> 
+	<input type="text" class="form-control" id="r7" name="r7" placeholder="año de la caida del imperio romano" required>
+	</div>
+		<div id="mensaje1"></div>
+		<br>
+<!-- 	Calificación: <span id="calificacion_final"></span>
+	<button onclick="calcular()" >Evaluar</button> -->
 
-<div class="formgroup" id="pre7">
-    <label for="email">7. año de la caida del imperio romano</label>
-    <input type="email" id="email" name="email" />
-</div>
+	<div class="form-group">
+	<label form="nombre_del_proveedor">8. Año de la independencia de México</label> 
+	<input type="text" class="form-control" id="r8" name="r8" placeholder="Año de la independencia de México" required>
+	</div>
+		<div id="mensaje1"></div>
+		<br>
+<!-- 	Calificación: <span id="calificacion_final"></span>
+	<button onclick="calcular()" >Evaluar</button> -->
 
-<div class="formgroup" id="pre8">
-    <label for="email">8. Año de la independencia de México</label>
-    <input type="email" id="email" name="email" />
-</div>
+	<div class="form-group">
+	<label form="nombre_del_proveedor">9. Primer ministro britanico que le declaro la guerra a Alemania</label> 
+	<input type="text" class="form-control" id="r9" name="r9" placeholder="Primer ministro britanico que le declaro la guerra a Alemania" required>
+	</div>
+		<div id="mensaje1"></div>
+		<br>
+<!-- 	Calificación: <span id="calificacion_final"></span>
+	<button onclick="calcular()" >Evaluar</button> -->
 
-<div class="formgroup" id="pre9">
-    <label for="email">9. Primer ministro britanico que le declaro la guerra a Alemania</label>
-    <input type="email" id="email" name="email" />
-</div>
+	<div class="form-group">
+	<label form="nombre_del_proveedor">10. Año de Ataque a Pearl Harbor</label> 
+	<input type="text" class="form-control" id="r10" name="r10" placeholder="Año de Ataque a Pearl Harbor" required>
+	</div>
+		<div id="mensaje1"></div>
+		<br>
+	Calificación: <span id="calificacion_final"></span>
+	<button onclick="calcular()" >Evaluar</button>
+	</div>
 
-<div class="formgroup" id="pre10">
-    <label for="email">10. Año de Ataque a Pearl Harbor</label>
-    <input type="email" id="email" name="email" />
-</div>
-<!--<div class="formgroup" id="message-form">
-    <label for="message">Your message</label>
-    <textarea id="message" name="message"></textarea>
-</div>-->
-
-	<input type="submit" value="Evaluar" />
-</form>
-</div>
 </body>
 </html>
