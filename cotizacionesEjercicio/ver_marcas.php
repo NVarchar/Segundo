@@ -30,29 +30,39 @@
                 $res = $sel->get_result();
                 $row = mysqli_num_rows($res);
                 ?>
+
+
+                <?php
+
+                $hostname = "localhost";
+                $username = "root";
+                $password = "";
+                $databaseName = "tallerbd";
+
+                $connect = mysqli_connect($hostname, $username, $password, $databaseName);
+
+                
+                $query = "SELECT * FROM `marca`";
+                $result2 = mysqli_query($connect, $query);
+
+                $options = "";
+
+                while($row2 = mysqli_fetch_array($result2))
+                {
+                    $options = $options."<option value='$row2[0]'>$row2[1]</option>";
+                }
+                ?>
+
+                <h3 class="mark">Seleccione la a consultar marca</h3>
+                <select>
+                <?php echo $options;?>
+                </select>
+                <br>
+
+
+
                 Elementos devueltos por la consulta: <?php echo $row ?>
-                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
-                    <th>ID MARCA</th>
-                    <th>NOMBRE MARCA</th>
-                    </thead>
-                    <tfoot>
-                    <th>ID MARCA</th>
-                    <th>NOMBRE MARCA</th>
-                    </tfoot>
-                    <tbody>
-                        <?php while ($f = $res->fetch_assoc()) { ?>
-                            <tr>
-                                <td><?php echo $f['marca_id'] ?></td>
-                                <td><?php echo $f['marca_nombre'] ?></td>
-                            </tr>
-                            <?php
-                        }
-                        $sel->close();
-                        $con->close();
-                        ?>
-                    <tbody>
-                </table>
+                
             </div>
         </div>
         <?php
