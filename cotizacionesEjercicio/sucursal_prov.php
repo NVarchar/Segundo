@@ -16,18 +16,45 @@
         <!--termina código que incluye el menú responsivo-->
         <div class="container">
             <div class="jumbotron">
-                <h1>Registrar un Proveedor</h1>
+                <h1>Registrar una Sucursal</h1>
                 <form role="form" id="login-form" 
                       method="post" class="form-signin" 
                       action="proveedor_guardar.php">
                     
                     <div class="h2">
-                        DATOS DEL PROVEEDOR
+                        DATOS DE LA SUCURSAL
                     </div>
                     <div class="form-group">
-                        <label for="nombre_del_proveedor">Nombre del Proveedor (requerido)</label>
+                        <label for="nombre_del_proveedor">Nombre de la sucursal (requerido)</label>
                         <input type="text" class="form-control" id="nombre_del_proveedor" name="nombre_del_proveedor"
                                placeholder="Ingresa nombre del proveedor" style="text-transform:uppercase;" required>
+                    </div>
+                     <div class="form-group">
+                        <?php
+
+                $hostname = "localhost";
+                $username = "root";
+                $password = "";
+                $databaseName = "tallerbd";
+
+                $connect = mysqli_connect($hostname, $username, $password, $databaseName);
+
+                
+                $query = "SELECT * FROM `proveedor`";
+                $result2 = mysqli_query($connect, $query);
+
+                $options = "";
+
+                while($row2 = mysqli_fetch_array($result2))
+                {
+                    $options = $options."<option value='$row2[0]'><option>$row2[1]</option>";
+                }
+                ?>
+
+                <h3>Seleccione el ID del proveedor</h3>
+                <select>
+                <?php echo $options;?>
+                </select>
                     </div>
                     <div class="form-group">
                         <label>Direcci&oacute;n</label>

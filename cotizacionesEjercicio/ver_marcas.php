@@ -49,7 +49,7 @@
 
                 while($row2 = mysqli_fetch_array($result2))
                 {
-                    $options = $options."<option>$row2[1]</option>";
+                    $options = $options."<option value='$row2[0]'><option>$row2[1]</option>";
                 }
                 ?>
 
@@ -62,7 +62,7 @@
 
 
                 Elementos devueltos por la consulta: <?php echo $row ?>
-                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+               <!-- <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <th>ID MARCA</th>
                     <th>NOMBRE MARCA</th>
@@ -84,7 +84,7 @@
                         $con->close();
                         ?>
                     <tbody>
-                </table>
+                </table>-->
             </div>
         </div>
         <?php
