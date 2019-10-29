@@ -49,11 +49,11 @@
 
                 while($row2 = mysqli_fetch_array($result2))
                 {
-                    $options = $options."<option value='$row2[0]'>$row2[1]</option>";
+                    $options = $options."<option>$row2[1]</option>";
                 }
                 ?>
 
-                <h3 class="mark">Seleccione la a consultar marca</h3>
+                <h3>Seleccione la marca que desea de la lista o busquela en la tabla de la parte inferior</h3>
                 <select>
                 <?php echo $options;?>
                 </select>
@@ -62,7 +62,29 @@
 
 
                 Elementos devueltos por la consulta: <?php echo $row ?>
-                
+                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                    <th>ID MARCA</th>
+                    <th>NOMBRE MARCA</th>
+                    </thead>
+                    <tfoot>
+                    <th>ID MARCA</th>
+                    <th>NOMBRE MARCA</th>
+                    </tfoot>
+                    <tbody>
+                        <?php while ($f = $res->fetch_assoc()) { ?>
+                            <tr>
+                                <td><?php echo $f['marca_id'] ?></td>
+                                <td><?php echo $f['marca_nombre'] ?></td>
+                            </tr>
+                            <?php
+                        }
+                        
+                        $sel->close();
+                        $con->close();
+                        ?>
+                    <tbody>
+                </table>
             </div>
         </div>
         <?php
