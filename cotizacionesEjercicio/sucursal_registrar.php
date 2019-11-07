@@ -14,22 +14,56 @@
     <body>
         <!--código que incluye el menú responsivo-->
         <?php include'inc/incluye_menu.php' ?>
+        <?php include'inc/conexion.php' ?>
         <!--termina código que incluye el menú responsivo-->
         <div class="container">
             <div class="jumbotron">
-                <h1>Registrar un Proveedor</h1>
+                <h1>Registrar una Sucursal</h1>
                 <form role="form" id="login-form" 
                       method="post" class="form-signin" 
-                      action="proveedor_guardar.php">
+                      action="sucursal_guardar.php">
                     
                     <div class="h2">
-                        DATOS DEL PROVEEDOR
+                        DATOS DE LA SUCURSAL
                     </div>
+
                     <div class="form-group">
-                        <label for="nombre_del_proveedor">Nombre del Proveedor (requerido)</label>
-                        <input type="text" class="form-control" id="nombre_del_proveedor" name="nombre_del_proveedor"
-                               placeholder="Ingresa nombre del proveedor" style="text-transform:uppercase;" required>
+
+                    	<?php
+
+                $hostname = "localhost";
+                $username = "root";
+                $password = "";
+                $databaseName = "tallerbd";
+
+                $connect = mysqli_connect($hostname, $username, $password, $databaseName);
+
+                
+                $query = "SELECT * FROM `proveedor`";
+                $result2 = mysqli_query($connect, $query);
+
+                $options = "";
+
+                while($row2 = mysqli_fetch_array($result2))
+                {
+                    $options = $options."<option> $row2[0] </option>";
+                }
+                ?>
+
+
+
+                        <label>Seleccione proveedor</label>
+                        <select name="id_proveedor">
+                        	<?php echo $options;?>
+                        </select>
                     </div>
+
+                    <div class="form-group">
+                        <label for="nombre_del_proveedor">Nombre de la Sucursal (requerido)</label>
+                        <input type="text" class="form-control" id="nombre_del_proveedor" name="nombre_del_proveedor"
+                               placeholder="Ingresa nombre de la sucursal" style="text-transform:uppercase;" required>
+                    </div>
+                    
                     <div class="form-group">
                         <label>Direcci&oacute;n</label>
                         <input type="text" class="form-control" id="direccion_del_proveedor" name="direccion_del_proveedor"

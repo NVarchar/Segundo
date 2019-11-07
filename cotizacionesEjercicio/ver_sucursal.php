@@ -18,7 +18,7 @@
             <div class="jumbotron">
                 <?php
                 //Consulta sin parámetros
-                $sel = $con->prepare("SELECT *from marca");
+                $sel = $con->prepare("SELECT *from sucursal_prov");
 
                 /* consulta con parametros
                   $sel = $con->prepare("SELECT *from marca WHERE marca_id<=?");
@@ -42,18 +42,18 @@
                 $connect = mysqli_connect($hostname, $username, $password, $databaseName);
 
                 
-                $query = "SELECT * FROM `marca`";
+                $query = "SELECT * FROM `sucursal_prov`";
                 $result2 = mysqli_query($connect, $query);
 
                 $options = "";
 
                 while($row2 = mysqli_fetch_array($result2))
                 {
-                    $options = $options."<option value='$row2[0]'>$row2[1]</option>";
+                    $options = $options."<option value='$row2[0]'>$row2[2]</option>";
                 }
                 ?>
 
-                <h3>Seleccione la marca que desea de la lista o busquela en la tabla de la parte inferior</h3>
+                <h3>Seleccione la sucursal que desea de la lista</h3>
                 <select>
                 <?php echo $options;?>
                 </select>
@@ -62,29 +62,7 @@
 
 
                 Elementos devueltos por la consulta: <?php echo $row ?>
-                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                    <thead>
-                    <th>ID MARCA</th>
-                    <th>NOMBRE MARCA</th>
-                    </thead>
-                    <tfoot>
-                    <th>ID MARCA</th>
-                    <th>NOMBRE MARCA</th>
-                    </tfoot>
-                    <tbody>
-                        <?php while ($f = $res->fetch_assoc()) { ?>
-                            <tr>
-                                <td><?php echo $f['marca_id'] ?></td>
-                                <td><?php echo $f['marca_nombre'] ?></td>
-                            </tr>
-                            <?php
-                        }
-                        
-                        $sel->close();
-                        $con->close();
-                        ?>
-                    <tbody>
-                </table>
+                
             </div>
         </div>
         <?php

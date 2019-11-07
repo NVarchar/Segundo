@@ -7,14 +7,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $telefono_1_post = strtoupper($_POST['telefono_1']);
     $telefono_2_post = strtoupper($_POST['telefono_2']);
     $correo_proveedor_post = strtoupper($_POST['correo_proveedor']);
-    $id_proveedor='';
-    $ins=$con->prepare("INSERT INTO proveedor VALUES(?,?,?,?,?,?)");
-    $ins->bind_param("isssss",$id,$nombre_del_proveedor_post,$direccion_del_proveedor_post,$telefono_1_post,$telefono_2_post,$correo_proveedor_post);
+    $id_proveedor_post=strtoupper($_POST['id_proveedor']);
+    $id_sucursal='';
+    $ins=$con->prepare("INSERT INTO sucursal_prov VALUES(?,?,?,?,?,?,?)");
+    $ins->bind_param("iisssss",$id,$id_proveedor_post,$nombre_del_proveedor_post,$direccion_del_proveedor_post,$telefono_1_post,$telefono_2_post,$correo_proveedor_post);
+    echo $id_proveedor_pos;
     if($ins->execute()){
-        header("Location: alerta.php?tipo=exito&operacion=Proveedor Guardado&destino=proveedor_registrar.php");
+    	
+        header("Location: alerta.php?tipo=exito&operacion=Sucursal Guardado&destino=sucursal_registrar.php");
     }
     else{
-        header("Location: alerta.php?tipo=fracaso&operacion=Proveedor No Guardado&destino=proveedor_registrar.php");
+    	
+        header("Location: alerta.php?tipo=fracaso&operacion=Sucursal No Guardado&destino=sucursal_registrar.php");
     }
     $ins->close();
     $con->close();
